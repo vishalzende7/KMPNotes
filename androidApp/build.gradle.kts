@@ -11,22 +11,28 @@ kotlin {
     }
 }
 dependencies {
-    implementation(project(":shared"))
+    implementation(project(":composeApp"))
+    implementation(projects.data)
 
     implementation(libs.androidx.activity.compose)
 
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
 }
 
 android {
     namespace = "com.vishal.kmpnotes"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    //noinspection GradleDependency
+    compileSdk = libs.versions.androidCompileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.vishal.kmpnotes"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        minSdk = libs.versions.androidMinSdk.get().toInt()
+        //noinspection OldTargetApi
+        targetSdk = libs.versions.androidTargetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }

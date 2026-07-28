@@ -1,7 +1,7 @@
 package com.vishal.kmpnotes
 
-interface Platform {
-    val name: String
+enum class Platform {
+    Desktop,
+    IOS,
+    Android
 }
-
-expect fun getPlatform(): Platform

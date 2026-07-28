@@ -12,9 +12,11 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    includeBuild("buildLogic")
 }
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google {
             mavenContent {
@@ -34,3 +36,10 @@ plugins {
 include(":androidApp")
 include(":desktopApp")
 include(":shared")
+include(":domain")
+include(":features:home")
+include(":features:common")
+include(":composeApp")
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include(":data")
