@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kmpnotes.kmp.library)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias (libs.plugins.koin.compiler)
 }
 
 kotlin {
@@ -21,6 +22,8 @@ kotlin {
 
             implementation(projects.features.home)
             implementation(projects.features.common)
+            implementation(projects.features.tasks)
+            implementation(projects.data)
 
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
@@ -31,6 +34,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.navigation.compose)
+            implementation(libs.koin.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

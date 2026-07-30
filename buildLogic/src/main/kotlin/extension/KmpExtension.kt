@@ -9,6 +9,7 @@ fun KotlinMultiplatformExtension.configureTargets(name: String) {
         iosTarget.binaries.framework {
             baseName = name
             isStatic = true
+            linkerOpts.add("-lsqlite3")
         }
     }
 

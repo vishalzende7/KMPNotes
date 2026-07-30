@@ -1,15 +1,15 @@
 package com.vishal.kmpnotes
 
 import android.app.Application
-import com.vishal.data.di.dataModules
-import org.koin.core.context.startKoin
+import com.vishal.kmpnotes.di.initKoin
+import org.koin.android.ext.koin.androidContext
 
-class NotesApp: Application() {
+class NotesApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        startKoin {
-            modules(dataModules)
+        initKoin {
+            androidContext(this@NotesApp)
         }
     }
 }

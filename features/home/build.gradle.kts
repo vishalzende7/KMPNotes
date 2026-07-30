@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.koin.compiler)
 }
-
+group = "com.vishal.kmpnotes.home"
 kotlin {
     configureTargets("home")
     androidLibrary {

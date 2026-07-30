@@ -39,6 +39,7 @@ include(":shared")
 include(":domain")
 include(":features:home")
 include(":features:common")
+include(":features:tasks")
 include(":composeApp")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

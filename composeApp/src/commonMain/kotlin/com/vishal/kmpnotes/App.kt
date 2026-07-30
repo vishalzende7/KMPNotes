@@ -11,9 +11,7 @@ import com.vishal.kmpnotes.theme.NoteTheme
 @Composable
 fun App() {
     NoteTheme {
-        Scaffold { innerPadding ->
-            RootNavHost(modifier = Modifier.fillMaxSize())
-        }
+        RootNavHost()
     }
 }
 

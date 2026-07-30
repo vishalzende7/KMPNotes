@@ -2,13 +2,10 @@ package com.vishal.kmpnotes
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import com.vishal.data.di.dataModules
-import org.koin.core.context.startKoin
+import com.vishal.kmpnotes.di.initKoin
 
 fun main() = application {
-    startKoin {
-        modules(dataModules)
-    }
+    initKoin {  }
     Window(
         onCloseRequest = ::exitApplication,
         title = "KMPNotes",

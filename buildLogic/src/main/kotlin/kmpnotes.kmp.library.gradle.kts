@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("com.android.kotlin.multiplatform.library")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 private val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
@@ -34,6 +35,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(project.dependencies.platform(libs.findLibrary("koin-bom").get()))
+                implementation(libs.findLibrary("kotlin-serialization-json").get())
             }
         }
     }
